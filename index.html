@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrescerDigital - De 0 a 50+ Leads Qualificados/Mês</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 50%, #f0f4f8 100%);
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #fff;
+            padding: 16px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0066cc;
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            color: #0066cc;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background: #ff6b35;
+            color: white;
+            padding: 18px 48px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #ff5722;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #0066cc;
+            padding: 16px 45px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .hero-cta-small {
+            font-size: 13px;
+            color: rgba(255,255,255,0.7);
+            margin-top: 15px;
+        }
+
+        section {
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        section:nth-child(even) {
+            background: linear-gradient(135deg, rgba(245, 250, 255, 0.95) 0%, rgba(235, 245, 255, 0.95) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        section:nth-child(3) {
+            background: linear-gradient(135deg, rgba(232, 245, 233, 0.95) 0%, rgba(220, 237, 200, 0.95) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .problem-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .problem-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            border-color: #0066cc;
+        }
+
+        .problem-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #0066cc;
+            font-weight: 700;
+        }
+
+        .problem-card p {
+            color: #666;
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e0e8ff;
+            transition: all 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.15);
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .process-step {
+            background: linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%);
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e0e8ff;
+            transition: all 0.3s;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: #0066cc;
+            color: white;
+            border-radius: 50%;
+            line-height: 60px;
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .process-step h3 {
+            color: #0066cc;
+            margin-bottom: 12px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .process-step p {
+            color: #666;
+            font-size: 15px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .testimonial:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: #0066cc;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #1a1a1a;
+            font-size: 15px;
+            margin-bottom: 5px;
+            font-style: normal;
+        }
+
+        .testimonial-role {
+            color: #ff6b35;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .differentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .differential {
+            padding: 25px;
+            background: linear-gradient(135deg, #fff8f0 0%, #fff0e8 100%);
+            border-radius: 12px;
+            border-left: 5px solid #ff6b35;
+            transition: all 0.3s;
+        }
+
+        .differential:hover {
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15);
+        }
+
+        .differential h3 {
+            color: #0066cc;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .differential p {
+            color: #666;
+            font-size: 15px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 30px;
+            font-size: 48px;
+        }
+
+        .offer-box {
+            background: rgba(255,255,255,0.12);
+            padding: 35px;
+            border-radius: 12px;
+            margin: 40px auto;
+            max-width: 600px;
+            border: 2px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .offer-box p {
+            margin: 12px 0;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .offer-box strong {
+            color: #ffeb3b;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 16px 45px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20ba58;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.3s;
+            overflow-y: auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 0;
+            width: 90%;
+            max-width: 950px;
+            border-radius: 12px;
+            box-shadow: 0 15px 60px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: white;
+            text-align: left;
+            font-size: 32px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg);
+        }
+
+        .cases-container {
+            padding: 40px;
+        }
+
+        .case-item {
+            margin-bottom: 50px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .case-item:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            border-color: #0066cc;
+        }
+
+        .case-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%);
+            display: block;
+        }
+
+        .case-body {
+            padding: 35px;
+            background: white;
+        }
+
+        .case-title {
+            font-size: 26px;
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .case-meta {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .case-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .case-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        .case-results {
+            background: linear-gradient(135deg, #f0f5ff 0%, #e8f0ff 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #ff6b35;
+        }
+
+        .case-results h4 {
+            color: #0066cc;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .results-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .results-list li {
+            color: #666;
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .results-list li:before {
+            content: "✓";
+            color: #ff6b35;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero .subtitle {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .case-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">📈 CrescerDigital</div>
+                <nav>
+                    <a href="#problema">Problema</a>
+                    <a href="#processo">Processo</a>
+                    <a href="#resultados">Resultados</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>De 0 a 50+ Leads Qualificados/Mês</h1>
+            <div class="subtitle">Marketing Digital que Gera Receita Real</div>
+            <p>Ajudamos agências, consultores e pequenas empresas a conquistar clientes qualificados através de estratégias comprovadas. Sem promessas vazias, apenas resultados mensuráveis.</p>
+            <div class="cta-buttons">
+                <button class="btn-primary" onclick="openCasesModal()">Ver Casos de Sucesso</button>
+                <button class="btn-secondary" onclick="scrollToContact()">Fale com Especialista</button>
+            </div>
+            <div class="hero-cta-small">✓ Grátis • ✓ Sem Compromisso • ✓ Resposta em 2 horas</div>
+        </div>
+    </section>
+
+    <section id="problema">
+        <div class="container">
+            <h2>Por Que Você Está Aqui?</h2>
+            <p class="section-subtitle">87% das pequenas e médias empresas enfrentam esses problemas simultâneos</p>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>🔍 Invisibilidade Digital</h3>
+                    <p>Seu site não rankeia no Google. Visitantes vão para concorrentes. Você perde R$ 5k-50k/mês em oportunidades.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>📉 Baixa Conversão</h3>
+                    <p>Tráfego existe, mas ninguém vira cliente. Faltam urgência, proposta clara e persuasão no seu site.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>💨 Ciclo Longo de Vendas</h3>
+                    <p>Leva 6-12 meses para fechar 1 cliente. Sem estratégia, você queima dinheiro em anúncios ineficientes.</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">67%</div>
+                    <div class="stat-label">das pequenas empresas não investem em marketing digital</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">3x</div>
+                    <div class="stat-label">mais vendas para empresas com estratégia vs. sem</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">economia em CAC com otimização correta</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #e8f5e9;">
+        <div class="container">
+            <h2>Nossa Fórmula Comprovada</h2>
+            <p class="section-subtitle">Aplicada em 15+ empresas | Resultados em 90 dias</p>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Diagnóstico</h3>
+                    <p>Analisamos seu site, concorrentes, público e estratégia atual. Identificamos 3-5 oportunidades de crescimento rápido.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Planejamento</h3>
+                    <p>Criamos um plano customizado com metas claras, timeline realista e investimento transparente. Você aprova antes de começar.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Execução Rápida</h3>
+                    <p>Iniciamos campanhas em 7 dias. Google Ads, SEO, landing pages, email marketing. Tudo otimizado para converter.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Acompanhamento</h3>
+                    <p>Relatório semanal com leads gerados, taxa de conversão e ROI. Otimizações contínuas para melhorar resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resultados">
+        <div class="container">
+            <h2>Resultado Real de Empresas Que Confiaram</h2>
+            <p class="section-subtitle">Histórias verdadeiras. Números comprovados.</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-text">"Saímos de 0 para 35 leads/mês em 3 meses. Agora fechamos R$ 12k em receita mensal. Esse é o melhor investimento que fizemos."</div>
+                    <div class="testimonial-author">Carlos Silva</div>
+                    <div class="testimonial-role">Serviço de Encanamento - São Paulo</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">"Estávamos invisíveis no Google. Com SEO local + Google Ads, temos 40 novos pacientes/mês. A clínica cresceu 200%."</div>
+                    <div class="testimonial-author">Dra. Ana Costa</div>
+                    <div class="testimonial-role">Clínica Odontológica - Rio de Janeiro</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">"E-commerce parado. Implementaram landing pages e automação. Resultado: R$ 180k em vendas em 90 dias. ROI de 6.8x."</div>
+                    <div class="testimonial-author">Marina Oliveira</div>
+                    <div class="testimonial-role">E-commerce Fashion - Belo Horizonte</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <button class="btn-primary" onclick="openCasesModal()" style="font-size: 17px; padding: 20px 50px;">📸 Ver Detalhes dos 3 Casos Reais</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Por Que Escolher a CrescerDigital?</h2>
+            <p class="section-subtitle">Não somos agência tradicional. Somos parceiros focados no seu lucro.</p>
+            
+            <div class="differentials-grid">
+                <div class="differential">
+                    <h3>✅ Garantia de Resultados</h3>
+                    <p>Se não gerarmos 20+ leads em 90 dias, devolvemos 50% do investimento. Simples assim.</p>
+                </div>
+                <div class="differential">
+                    <h3>✅ Transparência Total</h3>
+                    <p>Dashboard em tempo real: leads, conversão, ROI. Você vê exatamente onde seu dinheiro está gerando resultado.</p>
+                </div>
+                <div class="differential">
+                    <h3>✅ Execução Rápida</h3>
+                    <p>Campanhas ativas em 7 dias. Sem enrolação. Sem reuniões intermináveis. Resultados ou ajustes.</p>
+                </div>
+                <div class="differential">
+                    <h3>✅ Seu Time Dedicado</h3>
+                    <p>Não somos alocação genérica de agência grande. Você tem especialista fixo, disponível, comprometido com seu crescimento.</p>
+                </div>
+                <div class="differential">
+                    <h3>✅ Relatórios Claros</h3>
+                    <p>Semanal: tráfego, leads, taxa de conversão, CAC, LTV. Dados, não vanidades. Você entende cada métrica.</p>
+                </div>
+                <div class="differential">
+                    <h3>✅ Certificações Reconhecidas</h3>
+                    <p>Certificados Google Ads e Analytics. Acesso a recursos premium. Implementação de IA em estratégias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contato">
+        <div class="container">
+            <h2>Pronto para Crescer?</h2>
+            <p style="font-size: 20px; margin-bottom: 15px; font-weight: 500;">Consultoria Inicial - Completamente Grátis</p>
+            
+            <div class="offer-box">
+                <p><strong>✓</strong> 30 minutos com especialista em marketing digital</p>
+                <p><strong>✓</strong> Análise profunda: site, SEO, concorrentes, público</p>
+                <p><strong>✓</strong> 3-5 oportunidades de crescimento rápido identificadas</p>
+                <p><strong>✓</strong> Plano de ação customizado (sem compromisso)</p>
+                <p style="margin-top: 20px; font-size: 16px; color: #ffeb3b;"><strong>⚡ Resposta em até 2 horas</strong></p>
+            </div>
+            
+            <div style="margin-top: 30px;">
+                <button class="btn-primary" style="padding: 20px 50px; font-size: 17px;">Agendar Consultoria Grátis</button>
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20uma%20consultoria%20grátis" class="whatsapp-btn">💬 Falar no WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Casos de Sucesso -->
+    <div id="casesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Casos de Sucesso Reais</h2>
+                <button class="close-btn" onclick="closeCasesModal()">&times;</button>
+            </div>
+            
+            <div class="cases-container">
+                <!-- Caso 1: HidráuliTech -->
+                <div class="case-item">
+                    <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/7bfbe0ae-5c64-45c9-8774-0b8c8f85121e.png" alt="HidráuliTech Website" class="case-image">
+                    <div class="case-body">
+                        <h3 class="case-title">🔧 HidráuliTech - Serviço de Encanamento</h3>
+                        <div class="case-meta">
+                            <div class="case-meta-item">📍 São Paulo, SP</div>
+                            <div class="case-meta-item">⏱️ 3 meses</div>
+                            <div class="case-meta-item">💼 Serviço Local</div>
+                        </div>
+                        <div class="case-description">
+                            HidráuliTech era uma empresa consolidada, mas invisível no Google. Poucos clientes novos chegavam. Precisavam urgentemente de leads qualificados para crescer além das indicações.
+                        </div>
+                        
+                        <div class="case-results">
+                            <h4>📊 Resultados Alcançados:</h4>
+                            <ul class="results-list">
+                                <li><strong>+150% Tráfego Orgânico</strong> com SEO local otimizado</li>
+                                <li><strong>35 leads qualificados/mês</strong> com 22% de conversão em cliente</li>
+                                <li><strong>8x Retorno do Investimento</strong> em 90 dias (R$ 5k investido = R$ 40k faturado)</li>
+                                <li><strong>Google My Business em 1º lugar</strong> em todas as buscas locais de encanamento</li>
+                                <li><strong>Campanhas Google Ads</strong> gerando R$ 12.000 em receita mensal de forma consistente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caso 2: SmileCare -->
+                <div class="case-item">
+                    <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/e83fd55c-8dd6-4f33-a2cb-14d4bea16aa7.png" alt="SmileCare Odontologia" class="case-image">
+                    <div class="case-body">
+                        <h3 class="case-title">🦷 SmileCare - Clínica Odontológica</h3>
+                        <div class="case-meta">
+                            <div class="case-meta-item">📍 Rio de Janeiro, RJ</div>
+                            <div class="case-meta-item">⏱️ 4 meses</div>
+                            <div class="case-meta-item">💼 Saúde & Bem-estar</div>
+                        </div>
+                        <div class="case-description">
+                            SmileCare tinha excelente reputação, mas nenhuma presença digital. Dependia 100% de indicações boca-a-boca. Cadeira estava vazia e não crescia.
+                        </div>
+                        
+                        <div class="case-results">
+                            <h4>📊 Resultados Alcançados:</h4>
+                            <ul class="results-list">
+                                <li><strong>40 novos pacientes/mês</strong> através de marketing digital (antes: 2-3)</li>
+                                <li><strong>4.8/5 estrelas</strong> com 120+ avaliações verificadas no Google</li>
+                                <li><strong>R$ 85.000 em receita adicional</strong> em apenas 4 meses</li>
+                                <li><strong>Content Marketing estratégico</strong> gerando 180% mais visitantes qualificados</li>
+                                <li><strong>Email & WhatsApp Marketing automático</strong> para agendamentos, lembretes e follow-up</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caso 3: VesteMais -->
+                <div class="case-item">
+                    <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/809a7f92-ba59-4be0-9e17-8bfcca950c21.png" alt="VesteMais E-commerce" class="case-image">
+                    <div class="case-body">
+                        <h3 class="case-title">👗 VesteMais - E-commerce Fashion</h3>
+                        <div class="case-meta">
+                            <div class="case-meta-item">📍 Belo Horizonte, MG</div>
+                            <div class="case-meta-item">⏱️ 90 dias</div>
+                            <div class="case-meta-item">💼 E-commerce de Moda</div>
+                        </div>
+                        <div class="case-description">
+                            VesteMais tinha estoque bom, mas conversão extremamente baixa (0.8%). Gastar R$ 10k em anúncios renderizava em apenas R$ 8k de vendas. Estava queimando dinheiro.
+                        </div>
+                        
+                        <div class="case-results">
+                            <h4>📊 Resultados Alcançados:</h4>
+                            <ul class="results-list">
+                                <li><strong>R$ 180.000 em vendas</strong> geradas em apenas 90 dias</li>
+                                <li><strong>Taxa de conversão 3.2%</strong> (4x melhor que before) através de landing pages otimizadas</li>
+                                <li><strong>2.800 visitas/mês para 450 vendas/mês</strong> com ticket médio de R$ 400</li>
+                                <li><strong>Google Shopping + Facebook Ads integrados</strong> com estratégia de retargeting avançada</li>
+                                <li><strong>ROI de R$ 6.80 para cada R$ 1 investido</strong> (em vez de R$ 0.80 anterior)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024-2025 CrescerDigital. Todos os direitos reservados. | Marketing Digital com Resultados Comprovados</p>
+        </div>
+    </footer>
+
+    <script>
+        function openCasesModal() {
+            document.getElementById('casesModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCasesModal() {
+            document.getElementById('casesModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('casesModal');
+            if (event.target === modal) {
+                closeCasesModal();
+            }
+        }
+
+        function scrollToContact() {
+            document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeCasesModal();
+            }
+        });
+    </script>
+</body>
+</html>
